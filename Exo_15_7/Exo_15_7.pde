@@ -14,10 +14,13 @@ for (int i =0; i < notes.length; i++) {
   for (int j =0; j < 21; j++) {
     if (notes[i] == j) {
       distrib[j] += 1;
-   
+      eMax = distrib[j];
     }
+    float m = map(distrib[j], 0, eMax, height, 0);
+    rect(10, height-m, 20, m);
   }
 }
+
 
 
 println("moyenne note : ", moyenne);
